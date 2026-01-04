@@ -213,14 +213,17 @@ export const MemoPad = () => {
 
   const addMemo = () => {
     if (!text) return;
-    setMemos((prev) => [
-      ...prev,
-      {
-        id: Date.now(),
-        text: text,
-        createdAt: new Date().toISOString(),
-      },
-    ]);
+    setMemos((prev) => {
+      const p = safeArray(prev);
+      return [
+        ...p,
+        {
+          id: Date.now(),
+          text,
+          createdAt: new Date().toISOString(),
+        },
+      ];
+    });
     setText('');
   };
 
@@ -231,10 +234,10 @@ export const MemoPad = () => {
 
   const saveEdit = () => {
     setMemos((prev) =>
-      prev.map((memo) =>
-        memo.id === editingId ? { ...memo, text: editingText } : memo
-      )
-    );
+    safeArray(prev).map((memo) =>
+      memo.id === editingId ? { ...memo, text: editingText } : memo
+    )
+  );
     setEditingId(null);
     setEditingText('');
   };
@@ -245,13 +248,19 @@ export const MemoPad = () => {
     //prev 👉 今この瞬間のメモ配列
     //filter() 👉 条件に合うものだけ残す
     //(memo) => memo.id !== deleteId 👉 1個ずつメモを見る・deleteIdと一致しないidのmemoだけ残す
-    setMemos((prev) => prev.filter((memo) => memo.id !== deleteId));
+    setMemos((prev) =>
+  safeArray(prev).filter((memo) => memo.id !== deleteId)
+);
+
   };
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     return date.toLocaleDateString('ja-JP');
   };
+
+  const safeArray = (v) => (Array.isArray(v) ? v : []);
+
 
   return (
     <>
