@@ -234,10 +234,10 @@ export const MemoPad = () => {
 
   const saveEdit = () => {
     setMemos((prev) =>
-    safeArray(prev).map((memo) =>
-      memo.id === editingId ? { ...memo, text: editingText } : memo
-    )
-  );
+      safeArray(prev).map((memo) =>
+        memo.id === editingId ? { ...memo, text: editingText } : memo
+      )
+    );
     setEditingId(null);
     setEditingText('');
   };
@@ -249,8 +249,8 @@ export const MemoPad = () => {
     //filter() 👉 条件に合うものだけ残す
     //(memo) => memo.id !== deleteId 👉 1個ずつメモを見る・deleteIdと一致しないidのmemoだけ残す
     setMemos((prev) =>
-  safeArray(prev).filter((memo) => memo.id !== deleteId)
-);
+      safeArray(prev).filter((memo) => memo.id !== deleteId)
+    );
 
   };
 
@@ -274,6 +274,7 @@ export const MemoPad = () => {
                 <input
                   className="bg-transparent outline-none flex-1"
                   type="text"
+                  inputMode="text"
                   autoComplete="off"
                   placeholder="メモを入力"
                   value={text}
