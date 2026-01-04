@@ -274,6 +274,7 @@ export const MemoPad = () => {
                 <input
                   className="bg-transparent outline-none flex-1"
                   type="text"
+                  autoComplete="off"
                   placeholder="メモを入力"
                   value={text}
                   onChange={(e) => setText(e.target.value)}
