@@ -286,7 +286,7 @@ export const MemoPad = () => {
               //memos という配列の中身を、先頭から1つずつ取り出して、それぞれを memo と呼び、
               //それを使って新しい要素を作る
             }
-            {memos.map((memo) => (
+            {memos?.map((memo) => (
               <li
                 key={memo.id}
                 className="list-row items-start grid-cols-[auto_1fr_auto] gap-2"
