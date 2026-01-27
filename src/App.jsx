@@ -76,7 +76,7 @@ export const FortuneButton = () => {
         <div className="card-body gap-4">
           <div className="flex items-center justify-between">
             <h2 className="card-title">運試しボタン</h2>
-            <span className="badge badge-ghost">今日の運勢</span>
+            <span className="badge badge-primary badge-outline">今日の運勢</span>
           </div>
           <p className="text-sm text-base-content/60">
             ボタンを押すたびに結果が変わります。
@@ -118,7 +118,7 @@ export const Quiz = () => {
         <div className="card-body gap-4">
           <div className="flex items-center justify-between">
             <h2 className="card-title">クイズ</h2>
-            <span className="badge badge-outline">1問</span>
+            <span className="badge badge-primary badge-outline">1問</span>
           </div>
           <p className="text-sm text-base-content/60">
             Q. 日本で一番高い山は？
@@ -158,7 +158,7 @@ export const ColorChange = () => {
         <div className="card-body gap-4">
           <div className="flex items-center justify-between">
             <h2 className="card-title">色チェンジ</h2>
-            <span className="badge badge-outline">テーマ</span>
+            <span className="badge badge-primary badge-outline">テーマ</span>
           </div>
           <p className="text-sm text-base-content/60">
             ボタンで円の色を切り替えます。
@@ -238,7 +238,9 @@ export const CharaGacha = () => {
         <div className="card-body gap-4">
           <div className="flex items-center justify-between">
             <h2 className="card-title">キャラ生成ガチャ</h2>
-            <span className="badge badge-outline">{characters.length}種</span>
+            <span className="badge badge-primary badge-outline">
+              {characters.length}種
+            </span>
           </div>
           <p className="text-sm text-base-content/60">
             ランダムでキャラを生成します。
@@ -326,7 +328,7 @@ export const MemoPad = () => {
         <div className="card-body gap-4">
           <div className="flex items-center justify-between">
             <h2 className="card-title">メモ帳</h2>
-            <span className="badge badge-outline">ローカル保存</span>
+            <span className="badge badge-primary badge-outline">ローカル保存</span>
           </div>
           <p className="text-sm text-base-content/60">
             Enterで追加。編集時はEnterで保存します。
@@ -461,7 +463,6 @@ export default function App() {
       <div className="navbar bg-base-100/80 backdrop-blur border-b border-base-300 sticky top-0 z-10">
         <div className="flex-1 gap-2">
           <span className="text-xl font-bold">React課題</span>
-          <span className="badge badge-primary badge-outline">DaisyUI</span>
         </div>
         <div className="hidden sm:flex items-center gap-2 text-sm text-base-content/60">
           <span className="badge badge-ghost">
@@ -506,7 +507,6 @@ export default function App() {
         <section className="space-y-4">
           <div className="flex flex-wrap items-center gap-2">
             <h2 className="text-lg font-bold">{activeItem.label}</h2>
-            <span className="badge badge-primary badge-outline">選択中</span>
           </div>
           <p className="text-sm text-base-content/60">
             {activeItem.description}
