@@ -15,7 +15,7 @@ export const LikeButton = () => {
   };
 
   const styleLikeCount = clsx('text-4xl font-bold', {
-    'text-primary': likeCount % 2 === 0,
+    'text-primary-content': likeCount % 2 === 0,
     'text-base-content': likeCount % 2 !== 0,
   });
 
@@ -27,7 +27,7 @@ export const LikeButton = () => {
             <h2 className="card-title">いいねボタン</h2>
             <span className="badge badge-primary badge-outline">Like</span>
           </div>
-          <p className="text-sm text-base-content/80">
+          <p className="text-sm text-base-content/60">
             クリック回数が偶数のときは色が変わります。
           </p>
           {likeCount >= 10 && (
@@ -37,7 +37,7 @@ export const LikeButton = () => {
           )}
           <div className="flex items-end justify-between">
             <div className={styleLikeCount}>{likeCount}</div>
-            <div className="text-xs text-base-content/80">現在のカウント</div>
+            <div className="text-xs text-base-content/60">現在のカウント</div>
           </div>
           <div className="join">
             <button className="btn btn-primary join-item" onClick={onClickLike}>
@@ -78,7 +78,7 @@ export const FortuneButton = () => {
             <h2 className="card-title">運試しボタン</h2>
             <span className="badge badge-ghost">今日の運勢</span>
           </div>
-          <p className="text-sm text-base-content/80">
+          <p className="text-sm text-base-content/60">
             ボタンを押すたびに結果が変わります。
           </p>
           <button className="btn btn-primary w-fit" onClick={onClickResult}>
@@ -120,7 +120,7 @@ export const Quiz = () => {
             <h2 className="card-title">クイズ</h2>
             <span className="badge badge-outline">1問</span>
           </div>
-          <p className="text-sm text-base-content/80">
+          <p className="text-sm text-base-content/60">
             Q. 日本で一番高い山は？
           </p>
           <div className="join">
@@ -160,7 +160,7 @@ export const ColorChange = () => {
             <h2 className="card-title">色チェンジ</h2>
             <span className="badge badge-outline">テーマ</span>
           </div>
-          <p className="text-sm text-base-content/80">
+          <p className="text-sm text-base-content/60">
             ボタンで円の色を切り替えます。
           </p>
           <div className="flex items-center gap-4">
@@ -173,7 +173,7 @@ export const ColorChange = () => {
                 bgStatus === null && 'border-neutral'
               )}
             ></div>
-            <div className="text-sm text-base-content/80">
+            <div className="text-sm text-base-content/60">
               選択中: <span className="font-medium">{currentLabel}</span>
             </div>
           </div>
@@ -240,7 +240,7 @@ export const CharaGacha = () => {
             <h2 className="card-title">キャラ生成ガチャ</h2>
             <span className="badge badge-outline">{characters.length}種</span>
           </div>
-          <p className="text-sm text-base-content/80">
+          <p className="text-sm text-base-content/60">
             ランダムでキャラを生成します。
           </p>
           <button onClick={clickGacha} className="btn btn-soft w-fit">
@@ -250,7 +250,7 @@ export const CharaGacha = () => {
             <div className="flex items-center justify-between rounded-box border border-base-300 bg-base-200 px-3 py-2">
               <div>
                 <p className="text-lg font-bold">{character.name}</p>
-                <p className="text-xs text-base-content/80">レア度</p>
+                <p className="text-xs text-base-content/60">レア度</p>
               </div>
               <span className={clsx('badge badge-lg', rarityClass[character.rarity])}>
                 {character.rarity}
@@ -328,7 +328,7 @@ export const MemoPad = () => {
             <h2 className="card-title">メモ帳</h2>
             <span className="badge badge-outline">ローカル保存</span>
           </div>
-          <p className="text-sm text-base-content/80">
+          <p className="text-sm text-base-content/60">
             Enterで追加。編集時はEnterで保存します。
           </p>
           <div className="join w-full">
@@ -355,7 +355,7 @@ export const MemoPad = () => {
           </div>
 
           {memoList.length === 0 ? (
-            <div className="text-sm text-base-content/80">
+            <div className="text-sm text-base-content/60">
               まだメモがありません。
             </div>
           ) : (
@@ -369,7 +369,7 @@ export const MemoPad = () => {
                   key={memo.id}
                   className="list-row items-start grid-cols-[auto_1fr_auto] gap-3"
                 >
-                  <div className="text-base-content/70">
+                  <div className="text-gray-400">
                     {formatDate(memo.createdAt)}
                   </div>
 
@@ -463,7 +463,7 @@ export default function App() {
           <span className="text-xl font-bold">React課題</span>
           <span className="badge badge-primary badge-outline">DaisyUI</span>
         </div>
-        <div className="hidden sm:flex items-center gap-2 text-sm text-base-content/80">
+        <div className="hidden sm:flex items-center gap-2 text-sm text-base-content/60">
           <span className="badge badge-ghost">
             {menuItems.length}カード
           </span>
@@ -477,7 +477,7 @@ export default function App() {
               <h2 className="font-bold">メニュー</h2>
               <span className="badge badge-ghost">{menuItems.length}個</span>
             </div>
-            <p className="text-xs text-base-content/80">
+            <p className="text-xs text-base-content/60">
               表示したいカードを選択してください。
             </p>
             <ul className="menu menu-md p-0">
@@ -493,7 +493,7 @@ export default function App() {
                     )}
                   >
                     <span className="font-medium">{item.label}</span>
-                    <span className="text-xs text-base-content/80">
+                    <span className="text-xs text-base-content/60">
                       {item.description}
                     </span>
                   </button>
@@ -508,7 +508,7 @@ export default function App() {
             <h2 className="text-lg font-bold">{activeItem.label}</h2>
             <span className="badge badge-primary badge-outline">選択中</span>
           </div>
-          <p className="text-sm text-base-content/80">
+          <p className="text-sm text-base-content/60">
             {activeItem.description}
           </p>
           <div>
