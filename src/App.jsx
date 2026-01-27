@@ -15,7 +15,7 @@ export const LikeButton = () => {
   };
 
   const styleLikeCount = clsx('text-4xl font-bold', {
-    'text-primary-content': likeCount % 2 === 0,
+    'text-primary': likeCount % 2 === 0,
     'text-base-content': likeCount % 2 !== 0,
   });
 
