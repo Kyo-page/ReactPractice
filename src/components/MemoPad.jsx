@@ -3,8 +3,8 @@ import useLocalStorageState from 'use-local-storage-state';
 import { FaPlus } from 'react-icons/fa';
 import { FaXmark } from 'react-icons/fa6';
 
-//メモ帳
-export const MemoPad = () => {
+
+export const MemoPad = ({ label }) => {
     const [text, setText] = useState('');
     const [memos, setMemos] = useLocalStorageState('memos', []);
     const [editingId, setEditingId] = useState(null);
@@ -65,7 +65,7 @@ export const MemoPad = () => {
             <div className="card bg-base-100 shadow-md border border-base-300">
                 <div className="card-body gap-4">
                     <div className="flex items-center justify-between">
-                        <h2 className="card-title">メモ帳</h2>
+                        <h2 className="card-title">{label}</h2>
                         {/* <span className="badge badge-primary badge-outline">React</span> */}
                     </div>
                     <p className="text-sm text-base-content/60">

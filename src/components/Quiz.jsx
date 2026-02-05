@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
-//クイズ
-export const Quiz = () => {
+export const Quiz = ({ label }) => {
     const [result, setResult] = useState(null);
 
     const clickCorrect = () => {
@@ -17,7 +16,7 @@ export const Quiz = () => {
             <div className="card bg-base-100 shadow-md border border-base-300">
                 <div className="card-body gap-4">
                     <div className="flex items-center justify-between">
-                        <h2 className="card-title">クイズ</h2>
+                        <h2 className="card-title">{label}</h2>
                         {/* <span className="badge badge-primary badge-outline">React</span> */}
                     </div>
                     <p className="text-sm text-base-content/60">

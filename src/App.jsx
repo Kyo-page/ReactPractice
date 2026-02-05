@@ -7,6 +7,7 @@ import { ColorChange } from './components/ColorChange';
 import { CharaGacha } from './components/CharaGacha';
 import { MemoPad } from './components/MemoPad';
 import { Practice } from './components/Practice';
+import { ShoppingList } from './components/ShoppingList/ShoppingList';
 
 const menuItems = [
   {
@@ -50,6 +51,12 @@ const menuItems = [
     label: '練習課題',
     description: '初心者向け練習課題',
     component: Practice,
+  },
+  {
+    id: 'shopping',
+    label: '買い物リスト',
+    description: 'カテゴリごとに表示・管理',
+    component: ShoppingList,
   },
 ];
 
@@ -105,12 +112,6 @@ export default function App() {
         </aside>
 
         <section className="space-y-4">
-          <div className="flex flex-wrap items-center gap-2">
-            <h2 className="text-lg font-bold">{activeItem.label}</h2>
-          </div>
-          <p className="text-sm text-base-content/60">
-            {activeItem.description}
-          </p>
           <div>
             {menuItems.map((item) => {
               const Component = item.component;
@@ -119,7 +120,7 @@ export default function App() {
                   key={item.id}
                   className={clsx(activeId === item.id ? 'block' : 'hidden')}
                 >
-                  <Component />
+                  <Component label={item.label} />
                 </div>
               );
             })}

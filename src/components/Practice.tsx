@@ -5,21 +5,16 @@ export const Practice = () => {
     return (
         <>
             <div className="space-y-4">
-                <div className="card bg-base-100 shadow-md border border-base-300">
-                    <div className="card-body gap-4">
-                        <div className="flex items-center justify-between">
-                            <h2 className="card-title">第1問：ハロー・ワールド（Propsの基本）</h2>
-                        </div>
-                        <p>Greetingという名前のコンポーネントを作成してください。</p>
-                        <ul className="list-disc list-inside">
-                            <li>nameというプロパティ（Props）を受け取ります。</li>
-                            <li>画面に「こんにちは、[name]さん！」と表示してください。</li>
-                        </ul>
-                        <div className="bg-base-200 p-4 rounded-box">
-                            <Greeting name="太郎" />
-                        </div>
+                <Card title="第1問：ハロー・ワールド（Propsの基本）">
+                    <p>Greetingという名前のコンポーネントを作成してください。</p>
+                    <ul className="list-disc list-inside">
+                        <li>nameというプロパティ（Props）を受け取ります。</li>
+                        <li>画面に「こんにちは、[name]さん！」と表示してください。</li>
+                    </ul>
+                    <div className="bg-base-200 p-4 rounded-box">
+                        <Greeting name="太郎" />
                     </div>
-                </div>
+                </Card>
 
                 <Card title="第2問：カウンター（useStateの基本）">
                     <p>ボタンをクリックすると、数字が1ずつ増えるコンポーネントを作成してください。</p>
@@ -339,7 +334,7 @@ const Todo2 = () => {
 
     const [todosList, setTodosList] = useState(list);
 
-    const clickDelete = (id: listItem['id']) => {
+    const clickDelete = (id: listItem["id"]) => {
         setTodosList((prev) => prev.filter((todo) => todo.id !== id));
     };
 
