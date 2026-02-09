@@ -10,10 +10,10 @@ interface ItemInputProps {
 
 export const ItemInput = ({ setItems, text, setText }: ItemInputProps) => {
     const addItem = () => {
-        const newItem = {
+        const newItem: Item = {
             id: Math.floor(Math.random() * 1000),
             name: text,
-            category: "未分類",
+            category: "その他",
         };
 
         setItems((prev) => [...prev, newItem]);

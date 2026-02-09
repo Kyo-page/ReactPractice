@@ -9,7 +9,7 @@ interface ShoppingListProps {
 export type Item = {
     id: number;
     name: string;
-    category: string;
+    category: "野菜" | "肉" | "その他";
 };
 
 export const ShoppingList = ({ label }: ShoppingListProps) => {
@@ -19,6 +19,7 @@ export const ShoppingList = ({ label }: ShoppingListProps) => {
     ]);
 
     const [text, setText] = useState("");
+    const [category, setCategory] = useState("");
 
     return (
         <>
