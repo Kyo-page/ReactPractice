@@ -8,6 +8,7 @@ import { CharaGacha } from './components/CharaGacha';
 import { MemoPad } from './components/MemoPad';
 import { Practice } from './components/Practice';
 import { ShoppingList } from './components/ShoppingList/ShoppingList';
+import { Timer } from './components/Timer';
 
 const menuItems = [
   {
@@ -57,6 +58,12 @@ const menuItems = [
     label: '買い物リスト',
     description: 'カテゴリごとに表示・管理',
     component: ShoppingList,
+  },
+  {
+    id: 'timer',
+    label: 'タイマー',
+    description: 'カウントアップタイマー',
+    component: Timer,
   },
 ];
 
