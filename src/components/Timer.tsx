@@ -3,19 +3,41 @@ import { Card } from "./Card";
 
 export const Timer = () => {
     const [isActive, setIsActive] = useState(false);
-    useEffect(() => {
-        const timer = setInterval(() => {}, 1000);
+    const [count, setCount] = useState(0);
 
-        return () => {
-            clearInterval(timer);
-        };
-    }, []);
+    const formatCount = (count: number) => {
+        const minutes = Math.floor((count % 3600) / 60);
+        const seconds = count % 60;
+        return `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+    };
+
+    useEffect(() => {
+        if (isActive) {
+            const timerID = setInterval(() => {
+                setCount((prev) => prev + 1);
+            }, 1000);
+
+            return () => {
+                clearInterval(timerID);
+            };
+        }
+    }, [isActive]);
     return (
         <Card title="タイマー">
-            <div className="text-4xl font-bold">00:00:00</div>
+            <div className="text-4xl font-bold">{formatCount(count)}</div>
             <div className="flex gap-2">
-                <button className="btn btn-primary">スタート</button>
-                <button className="btn btn-soft">リセット</button>
+                <button onClick={() => setIsActive((prev) => !prev)} className="btn btn-primary">
+                    {isActive ? "ストップ" : "スタート"}
+                </button>
+                <button
+                    onClick={() => {
+                        setCount(0);
+                        setIsActive(false);
+                    }}
+                    className="btn btn-soft"
+                >
+                    リセット
+                </button>
             </div>
         </Card>
     );
