@@ -13,12 +13,12 @@ export const Timer = () => {
 
     useEffect(() => {
         if (isActive) {
-            const timerID = setInterval(() => {
+            const timer = setInterval(() => {
                 setCount((prev) => prev + 1);
             }, 1000);
 
             return () => {
-                clearInterval(timerID);
+                clearInterval(timer);
             };
         }
     }, [isActive]);
