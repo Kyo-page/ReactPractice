@@ -3,7 +3,6 @@ import useLocalStorageState from 'use-local-storage-state';
 import { FaPlus } from 'react-icons/fa';
 import { FaXmark } from 'react-icons/fa6';
 
-
 export const MemoPad = ({ label }) => {
     const [text, setText] = useState('');
     const [memos, setMemos] = useLocalStorageState('memos', []);

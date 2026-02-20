@@ -9,6 +9,7 @@ import { MemoPad } from './components/MemoPad';
 import { Practice } from './components/Practice';
 import { ShoppingList } from './components/ShoppingList/ShoppingList';
 import { Timer } from './components/Timer';
+import { DarkModeToggle } from './components/DarkModeToggle';
 
 const menuItems = [
   {
@@ -64,6 +65,12 @@ const menuItems = [
     label: 'タイマー',
     description: 'カウントアップタイマー',
     component: Timer,
+  },
+  {
+    id: 'dark-mode',
+    label: 'ダークモード切替',
+    description: 'ダークモードとライトモードを切り替える',
+    component: DarkModeToggle,
   },
 ];
 

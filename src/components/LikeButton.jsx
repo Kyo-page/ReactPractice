@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import clsx from 'clsx';
 
-
-
 export const LikeButton = ({ label }) => {
     const [likeCount, setLikeCount] = useState(0);
     const onClickLike = () => {
