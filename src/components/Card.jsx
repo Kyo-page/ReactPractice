@@ -1,6 +1,7 @@
 import React from "react";
 
-export const Card = ({ title, children, cardTheme }) => {
+// cardThemeのデフォルト値をlightに設定することで、cardThemeの指定が必須ではなくなる
+export const Card = ({ title, children, cardTheme = "light" }) => {
     return (
         <>
             <div className="card bg-base-100 shadow-md border border-base-300" data-theme={cardTheme}>
