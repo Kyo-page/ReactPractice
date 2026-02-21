@@ -10,6 +10,8 @@ import { Practice } from './components/Practice';
 import { ShoppingList } from './components/ShoppingList/ShoppingList';
 import { Timer } from './components/Timer';
 import { DarkModeToggle } from './components/DarkModeToggle';
+import { UserList } from './components/UserList';
+import { RandomCats } from './components/RandomCats';
 
 const menuItems = [
   {
@@ -72,6 +74,18 @@ const menuItems = [
     description: 'ダークモードとライトモードを切り替える',
     component: DarkModeToggle,
   },
+  {
+    id: 'user-list',
+    label: 'ユーザーリスト',
+    description: 'APIからユーザーリストを取得して表示する',
+    component: UserList,
+  },
+  {
+    id: 'random-cats',
+    label: 'ランダム猫ビューアー',
+    description: 'APIからランダムで猫を取得して表示する',
+    component: RandomCats,
+  },
 ];
 
 export default function App() {
@@ -115,7 +129,7 @@ export default function App() {
                     )}
                   >
                     <span className="font-medium">{item.label}</span>
-                    <span className="text-xs text-base-content/60">
+                    <span className="text-xs text-base-content/60 text-wrap">
                       {item.description}
                     </span>
                   </button>

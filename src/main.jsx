@@ -5,12 +5,10 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools' // 開発ツール
 import App from './App';
 
-const queryClient = new QueryClient()
-
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
 
-
+const queryClient = new QueryClient()
 
 root.render(
   <StrictMode>
