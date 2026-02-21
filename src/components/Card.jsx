@@ -1,6 +1,6 @@
 import React from "react";
 
-// cardThemeのデフォルト値をlightに設定することで、cardThemeの指定が必須ではなくなる
+// cardThemeのデフォルト値をlightに設定することで、cardThemeプロパティが任意項目になる
 export const Card = ({ title, children, cardTheme = "light" }) => {
     return (
         <>
